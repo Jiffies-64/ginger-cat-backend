@@ -90,6 +90,73 @@ VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '营业执照图片模糊，请�
        (2, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '通过', '002003', '管理员a', '2024-02-06 23:32:25'),
        (3, '9d8e4d714eab4da0a7dd0fb3ecfd04c7', '卫生状况堪忧', '002001', '管理员a', '2024-02-06 23:35:09');
 
+
+-- ----------------------------
+-- Table structure for rebate_activity
+-- ----------------------------
+
+CREATE TABLE `rebate_activity`
+(
+    `id`                 bigint                                                        NOT NULL AUTO_INCREMENT COMMENT '活动ID',
+    `shop_id`            varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '关联店铺ID',
+    `platform`           varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '所在平台，详见系统字典',
+    `requirements`       varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '参与要求，文本',
+    `rebate_type`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '返利类型，详见系统字典',
+    `rebate_details`     varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '返利细则，存储json',
+    `limitation`         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '限制条件，详见系统字典',
+    `limitation_details` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '限制细则，存储json',
+    `activity_type`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '活动类型，详见系统字典',
+    `total_quota`        int                                                           NOT NULL COMMENT '总名额',
+    `remaining_quota`    int                                                           NOT NULL COMMENT '剩余名额',
+    `audit_date`         datetime                                                      NOT NULL COMMENT '开始时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci
+  ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of rebate_activity
+-- ----------------------------
+
+INSERT INTO `rebate_activity` (id, shop_id, platform, requirements, rebate_type, rebate_details, limitation,
+                               limitation_details, activity_type, total_quota, remaining_quota, audit_date)
+VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002', '{}',
+        '304001', 10, 10, '2024-01-26 20:32:25');
+
+-- ----------------------------
+-- Table structure for rebate_activity_history
+-- ----------------------------
+
+CREATE TABLE `rebate_activity_history`
+(
+    `id`                 bigint                                                        NOT NULL AUTO_INCREMENT COMMENT '活动ID',
+    `shop_id`            varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '关联店铺ID',
+    `platform`           varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '所在平台，详见系统字典',
+    `requirements`       varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '参与要求，文本',
+    `rebate_type`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '返利类型，详见系统字典',
+    `rebate_details`     varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '返利细则，存储json',
+    `limitation`         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '限制条件，详见系统字典',
+    `limitation_details` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '限制细则，存储json',
+    `activity_type`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '活动类型，详见系统字典',
+    `total_quota`        int                                                           NOT NULL COMMENT '总名额',
+    `remaining_quota`    int                                                           NOT NULL COMMENT '剩余名额',
+    `audit_date`         datetime                                                      NOT NULL COMMENT '开始时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci
+  ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of rebate_activity_history
+-- ----------------------------
+
+INSERT INTO `rebate_activity_history` (id, shop_id, platform, requirements, rebate_type, rebate_details, limitation,
+                                       limitation_details, activity_type, total_quota, remaining_quota, audit_date)
+VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002', '{}',
+        '304001', 10, 10, '2024-01-26 20:32:25');
+
 -- ----------------------------
 -- Table structure for mq_message
 -- ----------------------------
