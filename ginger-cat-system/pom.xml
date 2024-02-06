@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>ginger-cat-parent</artifactId>
+        <groupId>top.gingercat</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../ginger-cat-parent</relativePath>
+    </parent>
+    <artifactId>ginger-cat-system</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ginger-cat-system</name>
+    <description>ginger-cat-system</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>ginger-cat-system-api</module>
+        <module>ginger-cat-system-service</module>
+        <module>ginger-cat-system-model</module>
+    </modules>
+</project>
