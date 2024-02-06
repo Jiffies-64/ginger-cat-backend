@@ -11,6 +11,8 @@
 
     <modules>
         <module>../ginger-cat-base</module>
+        <module>../ginger-cat-gateway</module>
+        <module>../ginger-cat-system</module>
     </modules>
 
     <properties>
