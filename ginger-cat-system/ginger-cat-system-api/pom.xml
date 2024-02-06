@@ -116,7 +116,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.2</version>
                 <configuration>
-                    <imageName>${project.artifactId}:${project.version}</imageName>
+                    <imageName>127.0.0.1:5000/${project.artifactId}:${project.version}</imageName>
                     <baseImage>java:8u20</baseImage>
                     <maintainer>nobody 940900298@qq.com</maintainer>
                     <workdir>/root</workdir>
