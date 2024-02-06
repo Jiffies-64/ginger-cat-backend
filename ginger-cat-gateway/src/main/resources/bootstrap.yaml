@@ -4,7 +4,7 @@ spring:
     name: gateway
   cloud:
     nacos:
-      server-addr: 47.97.59.161:8848
+      server-addr: 121.41.224.122:8848
       discovery:
         namespace: gc-dev
         group: ginger-cat-project
