@@ -9,6 +9,7 @@
         <groupId>top.gingercat</groupId>
         <artifactId>ginger-cat-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../ginger-cat-parent</relativePath>
     </parent>
     <dependencies>
         <!--认证相关-->
