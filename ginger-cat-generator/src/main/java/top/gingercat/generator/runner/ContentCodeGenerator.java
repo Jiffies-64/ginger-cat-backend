@@ -19,8 +19,6 @@ import java.util.Arrays;
  * MyBatis-Plus 代码生成类
  */
 @Component
-//@EnableAutoConfiguration
-//@ComponentScan("top.gingercat")
 public class ContentCodeGenerator implements ApplicationRunner {
 
     @Autowired

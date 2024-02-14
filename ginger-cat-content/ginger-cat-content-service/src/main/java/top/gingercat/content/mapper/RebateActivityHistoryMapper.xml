@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.gingercat.content.mapper.RebateActivityHistoryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.gingercat.content.model.po.RebateActivityHistory">
+        <id column="id" property="id" />
+        <result column="shop_id" property="shopId" />
+        <result column="platform" property="platform" />
+        <result column="requirements" property="requirements" />
+        <result column="rebate_type" property="rebateType" />
+        <result column="rebate_details" property="rebateDetails" />
+        <result column="limitation" property="limitation" />
+        <result column="limitation_details" property="limitationDetails" />
+        <result column="activity_type" property="activityType" />
+        <result column="total_quota" property="totalQuota" />
+        <result column="remaining_quota" property="remainingQuota" />
+        <result column="audit_date" property="auditDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, shop_id, platform, requirements, rebate_type, rebate_details, limitation, limitation_details, activity_type, total_quota, remaining_quota, audit_date
+    </sql>
+
+</mapper>

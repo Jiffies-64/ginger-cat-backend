@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/ginger-cat-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ginger-cat-system/pom.xml" />
         <option value="$PROJECT_DIR$/ginger-cat-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/ginger-cat-content/ginger-cat-content-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ginger-cat-content/ginger-cat-content-model/pom.xml" />
+        <option value="$PROJECT_DIR$/ginger-cat-content/ginger-cat-content-api/pom.xml" />
+        <option value="$PROJECT_DIR$/ginger-cat-content/pom.xml" />
       </list>
     </option>
   </component>
