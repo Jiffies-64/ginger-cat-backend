@@ -1,5 +1,5 @@
 ### 直接获取系统字典列表
-GET {{ system_host }}/dictionary/all
+GET {{ system_host }}/system/dictionary/all
 
 ### 网关获取系统字典列表
-GET {{ gateway_host }}/dictionary/all
+GET {{ gateway_host }}/system/dictionary/all

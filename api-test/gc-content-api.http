@@ -1,2 +1,5 @@
 ### 查询所有店铺信息
-GET {{ content_host }}/shopBase/all
+GET {{ gateway_host }}/content/shopBase/all
+
+### 直接查询所有店铺信息
+GET {{ content_host }}/content/shopBase/all
