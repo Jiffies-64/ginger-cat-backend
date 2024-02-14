@@ -3,12 +3,13 @@ package top.gingercat.content.model.po;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import top.gingercat.base.model.GeoPoint;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author jiffies
@@ -59,8 +60,8 @@ public class ShopBase implements Serializable {
     /**
      * 店铺定位
      */
-    @TableField(exist = false)
-    private String shopLocation;
+//    @TableField(exist = false)
+    private GeoPoint shopLocation;
 
     /**
      * 店铺地址
