@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/ginger-cat-parent/pom.xml" />
         <option value="$PROJECT_DIR$/ginger-cat-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ginger-cat-system/pom.xml" />
+        <option value="$PROJECT_DIR$/ginger-cat-generator/pom.xml" />
       </list>
     </option>
   </component>
