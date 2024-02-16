@@ -1,6 +1,7 @@
 package top.gingercat.content.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import top.gingercat.content.model.po.ShopBase;
 
 /**

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: content-service
+  cloud:
+    nacos:
+      server-addr: 121.41.224.122:8848
+      config:
+        namespace: gc-dev
+        group: ginger-cat-project
+        file-extension: yaml
+        refresh-enabled: true
+
+  profiles:
+    active: dev

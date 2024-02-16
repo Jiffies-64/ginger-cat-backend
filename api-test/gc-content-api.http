@@ -1,4 +1,4 @@
-### 查询所有店铺信息
+### 网关查询所有店铺信息
 GET {{ gateway_host }}/content/shopBase/all
 
 ### 直接查询所有店铺信息
