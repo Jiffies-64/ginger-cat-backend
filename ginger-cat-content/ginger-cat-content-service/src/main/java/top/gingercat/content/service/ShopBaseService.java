@@ -1,7 +1,12 @@
 package top.gingercat.content.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.gingercat.base.model.RestResponse;
+import top.gingercat.content.model.dto.ShopBaseBriefInfoDto;
+import top.gingercat.content.model.dto.ShopBaseInfoDto;
 import top.gingercat.content.model.po.ShopBase;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +18,7 @@ import top.gingercat.content.model.po.ShopBase;
  */
 public interface ShopBaseService extends IService<ShopBase> {
 
+    RestResponse<String> addShopBaseInfo(ShopBaseInfoDto shopBaseInfoDto, Long operatorId);
+
+    RestResponse<List<ShopBaseBriefInfoDto>> queryAll(Long merchantId);
 }

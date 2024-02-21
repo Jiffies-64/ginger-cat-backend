@@ -38,6 +38,7 @@ CREATE TABLE `shop_base`
     `mt_qr`            varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '美团店铺小程序二维码',
     `elm_qr`           varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '饿了么店铺小程序二维码',
     `status`           varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL COMMENT '店铺状态',
+    `merchant_id`      long CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL COMMENT '操作人id',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8
@@ -50,14 +51,14 @@ CREATE TABLE `shop_base`
 -- ----------------------------
 INSERT INTO `shop_base` (`id`, `shop_name`, `shop_type`, `contact_name`, `mobile`, `email`, `intro`, `logo`,
                          `shop_location`, `shop_address`, `business_hours`, `business_license`, `mt_qr`, `elm_qr`,
-                         `status`)
+                         `status`, `merchant_id`)
 VALUES ('af267b6e3ecb425682b5e7bf8bf9a6c1', '华莱士·拳击汉堡（比奇堡店）', '202002', '海绵宝宝', '12345678901',
         'mrhai@163.com', 'Welcome!', '', ST_GeomFromText('POINT(40.7128 -74.0060)'), '比奇堡', '{}',
         '/license/2024/02/af267b6e3ecb425682b5e7bf8bf9a6c1.jpg', '/qr/mt/2024/02/af267b6e3ecb425682b5e7bf8bf9a6c1.jpg',
-        '', '201001'),
+        '', '201001', 22889930821),
        ('9d8e4d714eab4da0a7dd0fb3ecfd04c7', '海霸王', '202004', '痞老板', '98765432109', 'pi@126.com', '', '',
         ST_GeomFromText('POINT(34.0522 -118.2437)'), '大洋海滩', '{}',
-        '/license/2024/01/9d8e4d714eab4da0a7dd0fb3ecfd04c7.jpg', '', '', '201002');
+        '/license/2024/01/9d8e4d714eab4da0a7dd0fb3ecfd04c7.jpg', '', '', '201002', 22889930821);
 
 
 -- ----------------------------

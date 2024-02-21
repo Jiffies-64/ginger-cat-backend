@@ -1,5 +1,5 @@
 ### 网关查询所有店铺信息
-GET {{ gateway_host }}/content/shopBase/all
+GET {{ gateway_host }}/content/shop-base/all
 
 ### 直接查询所有店铺信息
-GET {{ content_host }}/content/shopBase/all
+GET {{ content_host }}/content/shop-base/all

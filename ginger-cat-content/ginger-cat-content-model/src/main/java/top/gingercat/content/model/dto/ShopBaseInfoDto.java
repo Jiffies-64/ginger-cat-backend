@@ -1,7 +1,5 @@
-package top.gingercat.content.model.po;
+package top.gingercat.content.model.dto;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import top.gingercat.base.model.GeoPoint;
@@ -16,12 +14,10 @@ import java.io.Serializable;
  * @author jiffies
  */
 @Data
-@TableName("shop_base")
-public class ShopBase implements Serializable {
+public class ShopBaseInfoDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId
     private String id;
 
     /**
@@ -89,16 +85,5 @@ public class ShopBase implements Serializable {
      * 饿了么店铺小程序二维码
      */
     private String elmQr;
-
-    /**
-     * 店铺状态
-     */
-    private String status;
-
-    /**
-     * 商户id
-     */
-    private Long merchantId;
-
 
 }
