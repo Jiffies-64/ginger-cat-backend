@@ -127,8 +127,6 @@ INSERT INTO `rebate_activity` (id, shop_id, creator_id, platform, requirements, 
 VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', 12345678, '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002',
         '{}', '304001', 10, 10, '2024-01-26 20:32:25', '2024-01-26 23:32:25');
 
-SELECT * FROM rebate_activity t WHERE t.end_time < now() AND t.id % 1 = 0 LIMIT 100;
-
 -- ----------------------------
 -- Table structure for rebate_activity_history
 -- ----------------------------

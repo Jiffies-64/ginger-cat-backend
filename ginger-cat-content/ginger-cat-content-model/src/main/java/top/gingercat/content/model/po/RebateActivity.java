@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @TableName("rebate_activity")
 public class RebateActivity implements Serializable {
 
-    public static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 活动ID

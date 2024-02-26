@@ -52,4 +52,12 @@ public class ShopBaseServiceImpl extends ServiceImpl<ShopBaseMapper, ShopBase> i
         }
         return RestResponse.success(result);
     }
+
+    @Override
+    public ShopBaseBriefInfoDto getShopBaseBriefInfoDtoById(String id) {
+        ShopBase shopBase = shopBaseMapper.selectById(id);
+        ShopBaseBriefInfoDto dto = new ShopBaseBriefInfoDto();
+        BeanUtils.copyProperties(shopBase, dto);
+        return dto;
+    }
 }

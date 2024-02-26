@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author jiffies
@@ -23,7 +23,7 @@ import java.util.List;
 public class ShopBaseController {
 
     @Autowired
-    private ShopBaseService  shopBaseService;
+    private ShopBaseService shopBaseService;
 
     @GetMapping("all")
     public RestResponse<List<ShopBaseBriefInfoDto>> queryAll() {

@@ -21,4 +21,6 @@ public interface ShopBaseService extends IService<ShopBase> {
     RestResponse<String> addShopBaseInfo(ShopBaseInfoDto shopBaseInfoDto, Long operatorId);
 
     RestResponse<List<ShopBaseBriefInfoDto>> queryAll(Long merchantId);
+
+    ShopBaseBriefInfoDto getShopBaseBriefInfoDtoById(String id);
 }
