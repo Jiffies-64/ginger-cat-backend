@@ -1,6 +1,7 @@
 package top.gingercat.content.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.gingercat.content.model.po.RebateActivity;
 import top.gingercat.content.model.po.RebateActivityHistory;
 
 /**

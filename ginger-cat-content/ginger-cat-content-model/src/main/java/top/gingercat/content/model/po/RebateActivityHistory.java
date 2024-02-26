@@ -24,7 +24,6 @@ public class RebateActivityHistory implements Serializable {
     /**
      * 活动ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -80,7 +79,11 @@ public class RebateActivityHistory implements Serializable {
     /**
      * 开始时间
      */
-    private LocalDateTime auditDate;
+    public LocalDateTime startTime;
 
+    /**
+     * 结束时间
+     */
+    public LocalDateTime endTime;
 
 }

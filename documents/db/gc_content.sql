@@ -38,7 +38,7 @@ CREATE TABLE `shop_base`
     `mt_qr`            varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '美团店铺小程序二维码',
     `elm_qr`           varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '饿了么店铺小程序二维码',
     `status`           varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL COMMENT '店铺状态',
-    `merchant_id`      long CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL COMMENT '操作人id',
+    `merchant_id`      long CHARACTER SET utf8 COLLATE utf8_general_ci         NOT NULL COMMENT '操作人id',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8
@@ -95,11 +95,12 @@ VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '营业执照图片模糊，请�
 -- ----------------------------
 -- Table structure for rebate_activity
 -- ----------------------------
-
+DROP TABLE IF EXISTS `rebate_activity`;
 CREATE TABLE `rebate_activity`
 (
     `id`                 bigint                                                        NOT NULL AUTO_INCREMENT COMMENT '活动ID',
     `shop_id`            varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '关联店铺ID',
+    `creator_id`         bigint                                                        NOT NULL COMMENT '创建者ID',
     `platform`           varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '所在平台，详见系统字典',
     `requirements`       varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '参与要求，文本',
     `rebate_type`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '返利类型，详见系统字典',
@@ -109,7 +110,8 @@ CREATE TABLE `rebate_activity`
     `activity_type`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '活动类型，详见系统字典',
     `total_quota`        int                                                           NOT NULL COMMENT '总名额',
     `remaining_quota`    int                                                           NOT NULL COMMENT '剩余名额',
-    `audit_date`         datetime                                                      NOT NULL COMMENT '开始时间',
+    `start_time`         datetime                                                      NOT NULL COMMENT '开始时间',
+    `end_time`           datetime                                                      NOT NULL COMMENT '结束时间',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8mb4
@@ -120,18 +122,20 @@ CREATE TABLE `rebate_activity`
 -- Records of rebate_activity
 -- ----------------------------
 
-INSERT INTO `rebate_activity` (id, shop_id, platform, requirements, rebate_type, rebate_details, limitation,
-                               limitation_details, activity_type, total_quota, remaining_quota, audit_date)
-VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002', '{}',
-        '304001', 10, 10, '2024-01-26 20:32:25');
+INSERT INTO `rebate_activity` (id, shop_id, creator_id, platform, requirements, rebate_type, rebate_details, limitation,
+                               limitation_details, activity_type, total_quota, remaining_quota, start_time, end_time)
+VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', 12345678, '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002',
+        '{}', '304001', 10, 10, '2024-01-26 20:32:25', '2024-01-26 23:32:25');
+
+SELECT * FROM rebate_activity t WHERE t.end_time < now() AND t.id % 1 = 0 LIMIT 100;
 
 -- ----------------------------
 -- Table structure for rebate_activity_history
 -- ----------------------------
-
+DROP TABLE IF EXISTS `rebate_activity_history`;
 CREATE TABLE `rebate_activity_history`
 (
-    `id`                 bigint                                                        NOT NULL AUTO_INCREMENT COMMENT '活动ID',
+    `id`                 bigint                                                        NOT NULL COMMENT '活动ID',
     `shop_id`            varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '关联店铺ID',
     `platform`           varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '所在平台，详见系统字典',
     `requirements`       varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '参与要求，文本',
@@ -142,7 +146,8 @@ CREATE TABLE `rebate_activity_history`
     `activity_type`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci  NOT NULL COMMENT '活动类型，详见系统字典',
     `total_quota`        int                                                           NOT NULL COMMENT '总名额',
     `remaining_quota`    int                                                           NOT NULL COMMENT '剩余名额',
-    `audit_date`         datetime                                                      NOT NULL COMMENT '开始时间',
+    `start_time`         datetime                                                      NOT NULL COMMENT '开始时间',
+    `end_time`           datetime                                                      NOT NULL COMMENT '结束时间',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   CHARACTER SET = utf8mb4
@@ -154,9 +159,9 @@ CREATE TABLE `rebate_activity_history`
 -- ----------------------------
 
 INSERT INTO `rebate_activity_history` (id, shop_id, platform, requirements, rebate_type, rebate_details, limitation,
-                                       limitation_details, activity_type, total_quota, remaining_quota, audit_date)
+                                       limitation_details, activity_type, total_quota, remaining_quota, start_time, end_time)
 VALUES (1, 'af267b6e3ecb425682b5e7bf8bf9a6c1', '301001', '用餐反馈（需含字含图）', '302001', '{}', '303002', '{}',
-        '304001', 10, 10, '2024-01-26 20:32:25');
+        '304001', 10, 10, '2024-01-26 20:32:25', '2024-01-26 23:32:25');
 
 -- ----------------------------
 -- Table structure for mq_message

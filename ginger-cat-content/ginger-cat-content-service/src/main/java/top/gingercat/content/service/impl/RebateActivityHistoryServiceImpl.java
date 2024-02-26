@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import top.gingercat.content.mapper.RebateActivityHistoryMapper;
+import top.gingercat.content.model.po.RebateActivity;
 import top.gingercat.content.model.po.RebateActivityHistory;
 import top.gingercat.content.service.RebateActivityHistoryService;
 

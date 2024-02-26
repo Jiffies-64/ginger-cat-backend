@@ -1,7 +1,13 @@
 package top.gingercat.content.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.gingercat.base.model.RestResponse;
+import top.gingercat.content.model.dto.RebateActivityDto;
 import top.gingercat.content.model.po.RebateActivity;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +19,9 @@ import top.gingercat.content.model.po.RebateActivity;
  */
 public interface RebateActivityService extends IService<RebateActivity> {
 
+    RestResponse<String> createRebateActivity(RebateActivityDto rebateActivityDto);
+
+    int getRecordCountBeforeDate(LocalDateTime dt);
+
+    List<RebateActivity> getActivitiesBeforeDate(int sharedIndex, int sharedTotal, int count, LocalDateTime dt);
 }
