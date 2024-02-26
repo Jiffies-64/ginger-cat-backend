@@ -33,7 +33,8 @@ CREATE TABLE `dictionary`  (
 -- ----------------------------
 -- Records of dictionary
 -- ----------------------------
-INSERT INTO `dictionary` VALUES (12, '公共属性类型', '000', '[{\"code\":\"1\",\"codeInt\":1,\"desc\":\"使用态\"},{\"code\":\"0\",\"codeInt\":0,\"desc\":\"删除态\"},{\"code\":\"-1\",\"codeInt\":-1,\"desc\":\"暂时态\"}]');
+INSERT INTO `dictionary` VALUES (11, '公共属性类型', '000', '[{\"code\":\"1\",\"codeInt\":1,\"desc\":\"使用态\"},{\"code\":\"0\",\"codeInt\":0,\"desc\":\"删除态\"},{\"code\":\"-1\",\"codeInt\":-1,\"desc\":\"暂时态\"}]');
+INSERT INTO `dictionary` VALUES (12, '文件类型', '001', '[{\"code\":\"001001\",\"desc\":\"图片\"},{\"code\":\"001002\",\"desc\":\"静态页面\"},{\"code\":\"001003\",\"desc\":\"其他\"}]');
 INSERT INTO `dictionary` VALUES (13, '对象的审核状态', '002', '[{\"code\":\"002001\",\"desc\":\"审核未通过\"},{\"code\":\"002002\",\"desc\":\"未审核\"},{\"code\":\"002003\",\"desc\":\"审核通过\"}]');
 INSERT INTO `dictionary` VALUES (14, '店铺状态', '201', '[{\"code\":\"201001\",\"desc\":\"正常营业\"},{\"code\":\"201002\",\"desc\":\"暂停营业\"}]');
 INSERT INTO `dictionary` VALUES (15, '店铺类型', '202', '[{\"code\":\"202001\",\"desc\":\"包子粥铺\"},{\"code\":\"202002\",\"desc\":\"快餐简餐\"},{\"code\":\"202003\",\"desc\":\"甜品饮品\"},{\"code\":\"202004\",\"desc\":\"炸串小吃\"},{\"code\":\"202005\",\"desc\":\"火锅烧烤\"},{\"code\":\"202006\",\"desc\":\"汉堡西餐\"},{\"code\":\"202007\",\"desc\":\"零售\"}]');

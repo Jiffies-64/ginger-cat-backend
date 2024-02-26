@@ -89,5 +89,10 @@ public class ShopBase implements Serializable {
      */
     private String status;
 
+    /**
+     * 操作人id
+     */
+    private String merchantId;
+
 
 }

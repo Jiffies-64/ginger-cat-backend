@@ -19,11 +19,12 @@
         <result column="mt_qr" property="mtQr" />
         <result column="elm_qr" property="elmQr" />
         <result column="status" property="status" />
+        <result column="merchant_id" property="merchantId" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, shop_name, shop_type, contact_name, mobile, email, intro, logo, shop_location, shop_address, business_hours, business_license, mt_qr, elm_qr, status
+        id, shop_name, shop_type, contact_name, mobile, email, intro, logo, shop_location, shop_address, business_hours, business_license, mt_qr, elm_qr, status, merchant_id
     </sql>
 
 </mapper>

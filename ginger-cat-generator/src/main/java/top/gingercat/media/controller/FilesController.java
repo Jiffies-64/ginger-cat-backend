@@ -1,8 +1,8 @@
-package top.gingercat.content.controller;
+package top.gingercat.media.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.gingercat.content.service.ShopBaseService;
+import top.gingercat.media.service.FilesService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -10,16 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <p>
- *  前端控制器
+ * 媒资信息 前端控制器
  * </p>
  *
  * @author jiffies
  */
 @Slf4j
 @RestController
-@RequestMapping("shopBase")
-public class ShopBaseController {
+@RequestMapping("files")
+public class FilesController {
 
     @Autowired
-    private ShopBaseService  shopBaseService;
+    private FilesService  filesService;
 }

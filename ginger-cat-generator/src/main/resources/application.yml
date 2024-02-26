@@ -1,6 +1,6 @@
 # 数据库连接配置
 spring:
   datasource:
-    url: jdbc:mysql://47.97.59.161:3306/gc_
-    username: mp_generator
-    password: mp_generator
+    url: jdbc:mysql://127.0.0.1:3306/gc_
+    username: root
+    password: root

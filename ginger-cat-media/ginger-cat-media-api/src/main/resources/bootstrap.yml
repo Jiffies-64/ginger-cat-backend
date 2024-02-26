@@ -1,0 +1,32 @@
+#微服务配置
+spring:
+  application:
+    name: media-api
+  cloud:
+    nacos:
+      server-addr: 121.41.224.122:8848
+      discovery:
+        namespace: gc-dev
+        group: ginger-cat-project
+      config:
+        namespace: gc-dev
+        group: ginger-cat-project
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: media-service-${spring.profiles.active}.yaml
+            group: ginger-cat-project
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: ginger-cat-common
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: ginger-cat-common
+            refresh: true
+          - data-id: feign-${spring.profiles.active}.yaml
+            group: ginger-cat-common
+            refresh: true
+  profiles:
+    active: dev
+

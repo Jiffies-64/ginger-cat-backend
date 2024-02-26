@@ -23,8 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `media_files`;
 CREATE TABLE `media_files`  (
   `id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文件id,md5值',
-  `company_id` bigint NULL DEFAULT NULL COMMENT '商户ID',
-  `company_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商户名称',
+  `uploader_id` bigint NULL DEFAULT NULL COMMENT '文件上传者ID',
   `filename` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文件名称',
   `file_type` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件类型（图片、文档，视频）',
   `tags` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标签',
@@ -47,6 +46,6 @@ CREATE TABLE `media_files`  (
 -- ----------------------------
 -- Records of media_files
 -- ----------------------------
-INSERT INTO `media_files` VALUES ('1580180577525002241', 1232141425, NULL, '1.jpg', '001003', NULL, 'mediafiles', NULL, '8383a8c2c1d098fcc07da7d6e79ae31e', '/mediafiles/2022/10/12/8383a8c2c1d098fcc07da7d6e79ae31e.jpg', NULL, '2022-10-12 20:56:23', NULL, '1', NULL, NULL, NULL, 5767);
-INSERT INTO `media_files` VALUES ('1d0f0e6ed8a0c4a89bfd304b84599d9c', 1232141425, NULL, 'asset-icoGather.png', '001001', NULL, 'mediafiles', '2022/09/20/1d0f0e6ed8a0c4a89bfd304b84599d9c.png', '1d0f0e6ed8a0c4a89bfd304b84599d9c', '/mediafiles/2022/09/20/1d0f0e6ed8a0c4a89bfd304b84599d9c.png', NULL, '2022-09-20 21:21:28', NULL, '1', '', '002003', NULL, 8059);
+INSERT INTO `media_files` VALUES ('1580180577525002241', 1232141425, '1.jpg', '001003', NULL, 'mediafiles', NULL, '8383a8c2c1d098fcc07da7d6e79ae31e', '/mediafiles/2022/10/12/8383a8c2c1d098fcc07da7d6e79ae31e.jpg', NULL, '2022-10-12 20:56:23', NULL, '1', NULL, NULL, NULL, 5767);
+INSERT INTO `media_files` VALUES ('1d0f0e6ed8a0c4a89bfd304b84599d9c', 1232141425, 'asset-icoGather.png', '001001', NULL, 'mediafiles', '2022/09/20/1d0f0e6ed8a0c4a89bfd304b84599d9c.png', '1d0f0e6ed8a0c4a89bfd304b84599d9c', '/mediafiles/2022/09/20/1d0f0e6ed8a0c4a89bfd304b84599d9c.png', NULL, '2022-09-20 21:21:28', NULL, '1', '', '002003', NULL, 8059);
 

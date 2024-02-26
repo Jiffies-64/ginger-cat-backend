@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author jiffies
- * @since 2024-02-14
+ * @since 2024-02-26
  */
 public interface ShopBaseService extends IService<ShopBase> {
 
