@@ -13,6 +13,16 @@ public class OCRResult {
     String content;
 
     /**
+     * 正向情绪
+     */
+    float pos;
+
+    /**
+     * 反向情绪
+     */
+    float neg;
+
+    /**
      * 点坐标
      */
     List<List<Float>> pointList;

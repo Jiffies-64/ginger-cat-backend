@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from paddleocr import PaddleOCR
+from service.cal_senti import cal_senti
 
 OCRController = Blueprint('OCRController', __name__)
 
@@ -15,8 +16,11 @@ def ocr_by_url():
         res = ocr_result[idx]
         for line in res:
             points_lst, content = line[0], line[1][0]
+            pos, neg = cal_senti(content)
             new_line = {
                 "content": content,
+                "pos": pos,
+                "neg": neg,
                 "pointList": points_lst
             }
             result.append(new_line)

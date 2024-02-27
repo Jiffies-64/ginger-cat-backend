@@ -1,5 +1,8 @@
+import jpype
 from flask import Flask
 from blueprint.OCR import OCRController
+from blueprint.Senti import SentiController
+
 # import threading
 # import nacos
 #
@@ -17,10 +20,12 @@ from blueprint.OCR import OCRController
 #     """
 #     client.add_naming_instance(SERVER_NAME, "127.0.0.1", "63020", ephemeral=False)
 
+jpype.startJVM(classpath="sentistrength/SentiStrength-1.0-SNAPSHOT.jar")
 
 app = Flask(__name__)
 app.register_blueprint(OCRController, url_prefix='/api')
+app.register_blueprint(SentiController, url_prefix='/api')
 
 if __name__ == '__main__':
     # threading.Timer(5, service_register).start()
-    app.run(port=63020)
+    app.run()
